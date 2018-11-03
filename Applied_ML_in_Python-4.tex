@@ -1,0 +1,64 @@
+\documentclass[a4paper,11pt]{article} % добавить leqno в [] для нумерации слева
+
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в фомулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english]{babel}	% локализация и переносы
+\usepackage[a4paper, total={17cm, 26cm}]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+%% Номера формул
+\mathtoolsset{showonlyrefs=false} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+
+%% Шрифты
+\usepackage{euscript}	 % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+%\usepackage{pythonhighlight}
+\usepackage{underscore}
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Заголовок
+\author{Kevyn Collins-Thompson\\University of Michigan}
+\title{Applied Machine Learning in Python\\Module 4. Supervised Machine Learning --- Part 2}
+\date{}
+
+\begin{document} % конец преамбулы, начало документа
+
+\maketitle
+
+\tableofcontents
+
+\vspace{1cm}
+
+\begin{multicols}{2}
+
+\input{Naive-Bayes-Classifiers}
+
+\input{Random-Forests}
+
+%\input{Classifier-Decision-Functions}
+
+%\input{Precision-Recall-and-ROC-curves}
+
+%\input{Multi-Class-Evaluation}
+
+%\input{Regression-Evaluation}
+
+%\input{Model-Selection-Optimizing-Classifiers-for-Different-Evaluation-Metrics}
+
+\end{multicols}
+\end{document}
