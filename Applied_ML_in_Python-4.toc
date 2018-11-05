@@ -1,0 +1,74 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Introduction to Supervised Machine Learning}{3}{section.1}
+\contentsline {section}{\numberline {2}Overfitting and Underfitting}{6}{section.2}
+\contentsline {section}{\numberline {3}Supervised Learning: Datasets}{8}{section.3}
+\contentsline {section}{\numberline {4}K-Nearest Neighbors Classification}{9}{section.4}
+\contentsline {section}{\numberline {5}K-Nearest Neighbors: Classification and Regression}{13}{section.5}
+\contentsline {section}{\numberline {6}Linear Regression: Least-Squares}{16}{section.6}
+\contentsline {section}{\numberline {7}Linear Regression: Ridge, Lasso, and Polynomial Regression}{19}{section.7}
+\contentsline {section}{\numberline {8}Logistic Regression}{23}{section.8}
+\contentsline {section}{\numberline {9}Linear Classifiers: Support Vector Machines}{26}{section.9}
+\contentsline {section}{\numberline {10}Multi-Class Classification}{28}{section.10}
+\contentsline {section}{\numberline {11}Kernelized Support Vector Machines}{29}{section.11}
+\contentsline {section}{\numberline {12}Cross-Validation}{33}{section.12}
+\contentsline {section}{\numberline {13}Decision Trees}{35}{section.13}
+\contentsline {section}{\numberline {14}Model Evaluation and Selection}{39}{section.14}
+\contentsline {subsection}{\numberline {14.1}Evaluation metrics}{39}{subsection.14.1}
+\contentsline {subsection}{\numberline {14.2}Evaluation metrics for an imbalanced class}{40}{subsection.14.2}
+\contentsline {subsection}{\numberline {14.3}A null accuracy baseline}{41}{subsection.14.3}
+\contentsline {subsubsection}{\numberline {14.3.1}With Dummy Classifier}{41}{subsubsection.14.3.1}
+\contentsline {subsubsection}{\numberline {14.3.2}Other Types of Dummy Classifiers}{41}{subsubsection.14.3.2}
+\contentsline {subsection}{\numberline {14.4}Binary Classification Outcomes}{42}{subsection.14.4}
+\contentsline {section}{\numberline {15}Confusion Matrices and Basic Evaluation Metrics}{44}{section.15}
+\contentsline {subsection}{\numberline {15.1}Accuracy}{44}{subsection.15.1}
+\contentsline {subsection}{\numberline {15.2}Classification Error}{44}{subsection.15.2}
+\contentsline {subsection}{\numberline {15.3}Recall / True Positive Rate / Sensitivity}{45}{subsection.15.3}
+\contentsline {subsection}{\numberline {15.4}Precision}{45}{subsection.15.4}
+\contentsline {subsection}{\numberline {15.5}False Positive Rate / Specificity}{45}{subsection.15.5}
+\contentsline {subsection}{\numberline {15.6}Metrics in Scikit-learn}{46}{subsection.15.6}
+\contentsline {section}{\numberline {16}Classifier Decision Functions}{48}{section.16}
+\contentsline {subsection}{\numberline {16.1}Decision function method}{48}{subsection.16.1}
+\contentsline {subsection}{\numberline {16.2}Predict proba function}{48}{subsection.16.2}
+\contentsline {subsection}{\numberline {16.3}Decision threshold}{48}{subsection.16.3}
+\contentsline {section}{\numberline {17}Precision-Recall and ROC curves}{50}{section.17}
+\contentsline {subsection}{\numberline {17.1}Precision-Recall Curves}{50}{subsection.17.1}
+\contentsline {subsection}{\numberline {17.2}Receiver Operating Characteristic (ROC) curves}{50}{subsection.17.2}
+\contentsline {subsection}{\numberline {17.3}Area Under the ROC Curve (AUC)}{51}{subsection.17.3}
+\contentsline {section}{\numberline {18}Multi-Class Evaluation}{52}{section.18}
+\contentsline {section}{\numberline {19}Regression Evaluation}{54}{section.19}
+\contentsline {subsection}{\numberline {19.1}$R^2$ score}{54}{subsection.19.1}
+\contentsline {subsection}{\numberline {19.2}Alternative metrics}{54}{subsection.19.2}
+\contentsline {subsubsection}{\numberline {19.2.1}Mean absolute error}{54}{subsubsection.19.2.1}
+\contentsline {subsubsection}{\numberline {19.2.2}Mean squared error}{54}{subsubsection.19.2.2}
+\contentsline {subsubsection}{\numberline {19.2.3}Median absolute error}{54}{subsubsection.19.2.3}
+\contentsline {subsection}{\numberline {19.3}Dummy Regressors}{54}{subsection.19.3}
+\contentsline {section}{\numberline {20}Model Selection: Optimizing Classifiers for Different Evaluation Metrics}{56}{section.20}
+\contentsline {subsection}{\numberline {20.1}Cross Validation}{56}{subsection.20.1}
+\contentsline {subsection}{\numberline {20.2}Grid Search}{56}{subsection.20.2}
+\contentsline {section}{\numberline {21}Conclusion}{58}{section.21}
+\contentsline {section}{\numberline {22}Naive Bayes Classifiers}{59}{section.22}
+\contentsline {subsection}{\numberline {22.1}Bernoulli Naive Bayes model}{59}{subsection.22.1}
+\contentsline {subsection}{\numberline {22.2}Multinomial Naive Bayes model}{59}{subsection.22.2}
+\contentsline {subsection}{\numberline {22.3}Gaussian Naive Bayes model}{59}{subsection.22.3}
+\contentsline {section}{\numberline {23}Random Forests}{61}{section.23}
+\contentsline {subsection}{\numberline {23.1}Random Forests Model Creation}{61}{subsection.23.1}
+\contentsline {subsection}{\numberline {23.2}Prediction}{62}{subsection.23.2}
+\contentsline {subsection}{\numberline {23.3}Implementation}{62}{subsection.23.3}
+\contentsline {subsection}{\numberline {23.4}Pros and Cons}{63}{subsection.23.4}
+\contentsline {subsection}{\numberline {23.5}Key Parameters}{63}{subsection.23.5}
+\contentsline {section}{\numberline {24}Gradient Boosted Decision Trees}{64}{section.24}
+\contentsline {subsection}{\numberline {24.1}Pros and Cons}{65}{subsection.24.1}
+\contentsline {subsection}{\numberline {24.2}Key Parameters}{65}{subsection.24.2}
+\contentsline {section}{\numberline {25}Neural-Networks}{66}{section.25}
+\contentsline {subsection}{\numberline {25.1}Implementation}{67}{subsection.25.1}
+\contentsline {subsection}{\numberline {25.2}Multi-layer Perceptron}{68}{subsection.25.2}
+\contentsline {subsection}{\numberline {25.3}Regularization}{69}{subsection.25.3}
+\contentsline {subsection}{\numberline {25.4}Features Normalization}{70}{subsection.25.4}
+\contentsline {subsection}{\numberline {25.5}Regression}{70}{subsection.25.5}
+\contentsline {subsection}{\numberline {25.6}Pros and Cons}{71}{subsection.25.6}
+\contentsline {subsection}{\numberline {25.7}Key Parameters}{71}{subsection.25.7}
+\contentsline {section}{\numberline {26}Deep Learning}{73}{section.26}
+\contentsline {subsection}{\numberline {26.1}Pros and Cons}{74}{subsection.26.1}
+\contentsline {section}{\numberline {27}Data Leakage}{75}{section.27}
+\contentsline {subsection}{\numberline {27.1}Detecting Data Leakage}{76}{subsection.27.1}
+\contentsline {subsection}{\numberline {27.2}Minimizing Data Leakage}{76}{subsection.27.2}
