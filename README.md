@@ -2,4 +2,3 @@ This is slightly modified conspect of lectures delivered by prof. _Kevyn Collins
 
 Course: **[Applied Machine Learning in Python](https://www.coursera.org/learn/python-machine-learning/home/welcome)**.
 
-Module (Week): 4. **Supervised Machine Learning — Part 2**
