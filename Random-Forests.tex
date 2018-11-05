@@ -1,4 +1,5 @@
 \section{Random Forests}
+\begin{multicols}{2}
 
 A widely used and effective method in machine learning involves creating learning models known as \emph{ensembles}. An ensemble takes multiple individual learning models and combines them to produce an aggregate model that is more powerful than any of its individual learning models alone. 
 
@@ -130,3 +131,5 @@ The \texttt{max_features} parameter has a strong effect on performance. It has a
 The \texttt{max_depth} parameter controls the depth of each tree in the ensemble. The default setting for this is none, in other words, the nodes in a tree will continue to be split until all leaves contain the same class or have fewer samples than the minimum sample split parameter value, which is two by default. 
 
 The \texttt{n_jobs} parameter~--- how many cores to use in parallel to train the model. Generally, you can expect something close to a linear speed up. So, for example, if you have four cores, the training will be four times as fast as if you just used one. If you set end jobs to negative one it will use all the cores on your system and setting end jobs to a number that's more than the number of cores on your system won't have any additional effect. 
+
+\end{multicols}
