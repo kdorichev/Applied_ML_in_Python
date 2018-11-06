@@ -2,11 +2,11 @@
 
 %%% Работа с русским языком
 \usepackage{cmap}					% поиск в PDF
-\usepackage{mathtext} 				% русские буквы в фомулах
+%\usepackage{mathtext} 				% русские буквы в фомулах
 \usepackage[T2A]{fontenc}			% кодировка
 \usepackage[utf8]{inputenc}			% кодировка исходного текста
 \usepackage[english]{babel}	% локализация и переносы
-\usepackage[a4paper, total={17cm, 26cm}]{geometry}
+\usepackage[a4paper, total={17cm, 25cm}]{geometry}
 \usepackage{multicol}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -31,78 +31,61 @@
 \newcommand*{\hm}[1]{#1\nobreak\discretionary{}
 {\hbox{$\mathsurround=0pt #1$}}{}}
 
-%%% Заголовок
 \author{Kevyn Collins-Thompson\\University of Michigan}
 \title{Applied Machine Learning in Python}
 \date{}
 
+%%% Header and Footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\addtolength{\headheight}{\baselineskip}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\rhead{\textsl{\leftmark}}
+\lhead{\textsl{Applied Machine Learning in Python}}
+\chead{}
+\lfoot{\scriptsize \textsl{Kevyn Collins-Thompson}}
+\cfoot{\thepage}
+\rfoot{\scriptsize \textsl{University of Michigan}}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.2pt}
+	
 \begin{document} % конец преамбулы, начало документа
-
 \maketitle
-
+\thispagestyle{empty}
 \tableofcontents
 
-%\vspace{1cm}
-
-\pagebreak
-
-
 %--- WEEK 1
+\include{K-Nearest-Neighbors-Classification}
  
 %--- WEEK 2
 \include{Introduction-to-Supervised-Machine-Learning}
-
 \include{Overfitting-and-Underfitting}
-
 \include{Supervised-Learning-Datasets}
-
-\include{K-Nearest-Neighbors-Classification}
-
 \include{K-Nearest-Neighbors-Classification-and-Regression}
-
 \include{Linear-Regression-Least-Squares}
-
 \include{Linear-Regression-Ridge-Lasso-and-Polynomial-Regression}
-
 \include{Logistic-Regression}
-
 \include{Linear-Classifiers-Support-Vector-Machines}
-
 \include{Multi-Class-Classification}
-
 \include{Kernelized-Support-Vector-Machines}
-
 \include{Cross-Validation}
-
 \include{Decision-Trees}
+
 %--- WEEK 3
-
 \include{Model-Evaluation-and-Selection}
-
 \include{Confusion-Matrices-and-Basic-Evaluation-Metrics}
-
 \include{Classifier-Decision-Functions}
-
 \include{Precision-Recall-and-ROC-curves}
-
 \include{Multi-Class-Evaluation}
-
 \include{Regression-Evaluation}
-
 \include{Model-Selection-Optimizing-Classifiers-for-Different-Evaluation-Metrics}
 
 %--- WEEK 4 
 \include{Naive-Bayes-Classifiers}
-
 \include{Random-Forests}
-
 \include{Gradient-Boosted-Decision-Trees}
-
 \include{Neural-Networks}
-
 \include{Deep-Learning}
-
 \include{Data-Leakage}
-
 
 \end{document}
