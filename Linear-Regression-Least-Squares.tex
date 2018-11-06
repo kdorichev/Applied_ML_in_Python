@@ -1,13 +1,11 @@
 \section{Linear Regression: Least-Squares}
 \begin{multicols}{2}
 
-One of the simplest kinds of supervised models are linear models. 
-
-A linear model expresses the target output value in terms of a sum of weighted input variables. 
+One of the simplest kinds of supervised models are linear models. A linear model expresses the target output value in terms of a sum of weighted input variables. 
 
 For example, our goal may be to predict the market value of a house, its expected sales price in the next month, for example. 
 
-Suppose we're given two input variables, how much tax the properties assessed each year by the local government, and the age of the house in years. 
+Suppose we're given two input variables: how much tax the properties assessed each year by the local government, and the age of the house in years. 
 
 You can imagine that these two features of the house would each have some information that's helpful in predicting the market price. Because in most places, there's a positive correlation between the tax assessment on a house and its market value. 
 
@@ -21,21 +19,21 @@ and then subtracting 2,000 times the age of the house in years. So for example t
 
 Predicting house price is an example of a regression task using a linear model called, not surprisingly, linear regression. 
 
-More generally, in a linear regression model, there may be multiple input variables, or features, which we'll denote x0, x1, etc. 
+More generally, in a linear regression model, there may be multiple input variables, or features, which we'll denote $x_0$, $x_1$, etc. 
 
-Each feature, xi, has a corresponding weight, wi. 
+Each feature, $x_i$, has a corresponding weight, $w_i$. 
 
-The predicted output, which we denote y hat, 
+The predicted output, which we denote $\hat{y}$, is a weighted sum of features plus a constant term $\hat{b}$. 
 
-is a weighted sum of features plus a constant term b hat. 
+I've put a $\hat{}$ over all the quantities here that are estimated during the regression training process. The $\hat{w}$ and $\hat{b}$ values which we call the \emph{train parameters} or \emph{coefficients} are estimated from training data. And $\hat{y}$  is estimated from the linear function of input feature values and the train parameters. 
 
-I've put a hat over all the quantities here that are estimated during the regression training process. The w hat and b hat values which we call the train parameters or coefficients are estimated from training data. And y hat is estimated from the linear function of input feature values and the train parameters. For example, in the simple housing price example we just saw, w0 hat was 109, x0 represented tax paid, w1 hat was negative 20 x1 was house age and b hat was 212,000. We called these wi values model coefficients or sometimes future weights, and b hat is called the bias term or the intercept of the model. 
+For example, in the simple housing price example we just saw, $\hat{w_0}$ was 109, x0 represented tax paid, $\hat{w_1}$ was negative 20, x1 was house age and $\hat{b}$ was 212,000. We called these $w_i$ values model coefficients or sometimes future weights, and $\hat{b}$ is called the \emph{bias term} or the \emph{intercept} of the model. 
 
-Here's an example of a linear regression model with just one input variable or feature x0 on a simple artificial example dataset. 
+Here's an example of a linear regression model with just one input variable or feature $x_0$ on a simple artificial example dataset. 
 
-The blue cloud of points represents a training set of x0, y pairs. 
+The blue cloud of points represents a training set of $x_0$, $y$ pairs. 
 
-In this case, the formula for predicting the output y hat is just w0 hat times x0 + b hat, which you might recognize as the familiar slope intercept formula for a straight line, where w0 hat is the slope, and b hat is the y intercept. 
+In this case, the formula for predicting the output $$\hat{y} = \hat{w_0}*x0 + \hat{b}$$, which you might recognize as the familiar slope intercept formula for a straight line, where w0 hat is the slope, and $\hat{b}$ is the y intercept. 
 
 The grand red lines represent different possible linear regression models that could attempt to explain the relationship between x0 and y. 
 
@@ -49,21 +47,17 @@ Let's take a look at a very simple form of linear regression model that just has
 
 In this case, we have the vector x just has a single component, we'll call it x0, that's the input variable, input feature. 
 
-And, in this case because there's just one variable, the predicted output is simply the product of the weight w0 with the input variable x0 plus a biased term b. 
+And, in this case because there's just one variable, the predicted output is simply the product of the weight $w_0$ with the input variable $x_0$ plus a biased term $b$. 
 
-So x0 is the value that's provided, it comes with the data and so the parameters we have to estimate are w0 and b, in order to obtain the parameters for this linear regression model. 
+So $x_0$ is the value that's provided, it comes with the data and so the parameters we have to estimate are $w_0$ and $b$, in order to obtain the parameters for this linear regression model. 
 
-So this formula may look familiar, it's the formula for a line in terms of its slope. In this case, slope corresponds to the weight, w0, and b corresponds to the y intercept, we call the bias term. 
+So this formula may look familiar, it's the formula for a line in terms of its slope. In this case, slope corresponds to the weight, $w_0$, and $b$ corresponds to the $y$ intercept, we call the bias term. 
 
-So here, the job of the model is to take as input. Let's pick a point here, on the x-axis so w0 corresponds to the slope of this line and 
+So here, the job of the model is to take as input. Let's pick a point here, on the x-axis so $w_0$ corresponds to the slope of this line and $b$ corresponds to the $y$ intercept of the line. And so finding these two parameters, these two parameters together define a straight line in this feature space. 
 
-b corresponds to the y intercept of the line. And so finding these two parameters, these two parameters together define a straight line in this feature space. 
+Now the important thing to remember is that there's a training phase and a prediction phase. So the training phase, using the training data, is what we'll use to estimate $w_0$ and $b$. 
 
-Now the important thing to remember is that there's a training phase and a prediction phase. So the training phase, using the training data, 
-
-is what we'll use to estimate w0 and b. 
-
-So widely used method for estimating w and b for linear aggression problems is called least-squares linear regression, also known as ordinary least-squares. Least-squares linear regression finds the line through this cloud of points that minimizes what is called the means squared error of the model. The mean squared error of the model is essentially the sum of the squared differences between the predicted target value and the actual target value for all the points in the training set. 
+So widely used method for estimating $w$ and $b$ for linear aggression problems is called least-squares linear regression, also known as ordinary least-squares. Least-squares linear regression finds the line through this cloud of points that minimizes what is called the means squared error of the model. The mean squared error of the model is essentially the sum of the squared differences between the predicted target value and the actual target value for all the points in the training set. 
 
 This plot illustrates what that means. 
 

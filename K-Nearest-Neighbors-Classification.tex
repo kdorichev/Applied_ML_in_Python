@@ -1,15 +1,21 @@
 \section{K-Nearest Neighbors Classification}
 \begin{multicols}{2}
 
-Now that we've gotten a sense for what's in our data set, as a simple example to get started, we're going to use this data set to train a classifier that will automatically identify any future pieces of fruit that might come our way. Based on the features available to the classifier such as the object's color, size and mass. To do this, we'll use a popular and easy to understand type of machine learning algorithm known as k-nearest neighbors or k-NN. The K-Nearest Neighbors algorithm can be used for classification and regression. Though, here we'll focus for the time being on using it for classification. k-NN classifiers are an example of what's called instance based or memory based supervised learning. What this means is that instance based learning methods work by memorizing the labeled examples that they see in the training set. And then they use those memorized examples to classify new objects later. 
+Now that we've gotten a sense for what's in our data set, as a simple example to get started, we're going to use this data set to train a classifier that will automatically identify any future pieces of fruit that might come our way. Based on the features available to the classifier such as the object's color, size and mass. To do this, we'll use a popular and easy to understand type of machine learning algorithm known as \emph{k-nearest neighbors} (k-NN). 
 
-The k in k-NN refers to the number of nearest neighbors the classifier will retrieve and use in order to make its prediction. 
+The \texttt{K-Nearest Neighbors} algorithm can be used for \emph{classification} and \emph{regression}. Though, here we'll focus for the time being on using it for classification. 
 
-In particular, the k-NN algorithm has three steps that can be specified. First of all, when given a new previously unseen instance of something to classify, 
+\texttt{k-NN} classifiers are an example of what's called \emph{instance based or memory based supervised learning}. What this means is that instance based learning methods work by \emph{memorizing} the labeled examples that they see in the training set. And then they use those memorized examples to classify new objects later. 
 
-a k-NN classifier will look into its set of memorized training examples to find the k examples that have closest features. And we'll talk about what closest means in a minute. 
+The \textbf{\texttt{k}} in \texttt{k-NN} refers to the number of nearest neighbors the classifier will retrieve and use in order to make its prediction. 
 
-Second, the classifier will look up the class labels for those k-Nearest Neighbor examples. And then once it's done that, it will combine the labels of those examples to make a prediction for the label of the new object. Typically, for example, by using simple majority vote. 
+In particular, the \texttt{k-NN}  algorithm has three steps:
+
+First of all, when given a new previously unseen instance of something to classify, a k-NN classifier will look into its set of memorized training examples to find the k examples that have \emph{closest features}. 
+
+Second, the classifier will look up the \emph{class labels} for those k-Nearest Neighbor examples. 
+
+And then once it's done that, it will \emph{combine} the labels of those examples to make a prediction for the label of the new object. Typically, for example, by using simple \emph{majority vote}. 
 
 Let's look at a visual example of a k-NN classifier that is based on our fruit data set. 
 
@@ -18,6 +24,10 @@ So what I've done here is taken our training set and plotted each piece of fruit
 These two features together form what is called the feature space of the classifier. 
 
 And I've shown each data point's label using the colors shown in the legend. So as you can see, there are four different colors here that correspond to the four types of fruit that are in our data set. 
+
+\begin{center}
+\includegraphics[width=\linewidth]{img/kNN-Classifier-k1-example.png}
+\end{center}
 
 These broad areas of color show how any point, given a width and height, could be classified according to a one nearest neighbor rule. So, in other words, I've set k = 1 here. So, for example, a data point over here that had a height of six centimeters and a width of nine centimeters would be classified as an apple. Because it falls within this red area here that the k-NN classifier has decided map two objects that are apples based on the dimensions. Or for example if I saw that the classifier saw a piece of fruit that had a height of four centimeters and a width of seven centimeters, it would be classified as a mandarin orange. Because it falls within this decision area that's assigned to mandarin oranges. 
 
@@ -47,51 +57,62 @@ When you get points that are closer to, say, a point over here, the two nearest 
 
 In which case you could choose randomly between them to break the tie. Typically, the value of k is odd, so that we can simply, k equals three it might look like this. And so, you can see that the three nearest neighbors here are a red point an apple, a blue point an orange, and another red point an apple. So, in the k = 3 case, the vote would go towards labeling this as an apple. 
 
-And that's basically all there is to the basic mechanism for k-NN classifiers. More generally, to use the nearest neighbor algorithm, we specify four things. First, we need to define what distance means in our future space, so we know how to properly select the nearby neighbors. In the example that I just showed you with the fruit data set, we used the simple straight line, or euclidean distance to measure the distance between points. 
+And that's basically all there is to the basic mechanism for k-NN classifiers. 
 
-Second, we must tell the algorithm how many of these nearest neighbors to use in making a prediction. This must be a number that is at least one. 
+\subsection{Parameters}
 
-Third, we may want to give some neighbors more influence on the outcome. For example, we may decide that neighbors that are closer to the new instance that we're trying to classify, should have more influence, or more votes on the final label. 
+More generally, to use the nearest neighbor algorithm, we specify four things:
 
-Finally, once we have the labels of the k nearby points, we must specify how to combine them to produce a final prediction. 
+\begin{enumerate}
+
+\item define what \emph{distance} means in our future space, so we know how to properly select the nearby neighbors. In the example that I just showed you with the fruit data set, we used the simple straight line, or euclidean distance to measure the distance between points. 
+
+\item we must tell the algorithm \emph{how many} of these nearest neighbors to use in making a prediction. This must be a number that is at least one. 
+
+\item we may want to give some neighbors more influence on the outcome. For example, we may decide that neighbors that are closer to the new instance that we're trying to classify, should have more influence, or more votes on the final label. 
+
+\item once we have the labels of the k nearby points, we must specify how to combine labels to produce a final prediction. 
+\end{enumerate}
 
 Here's a specific example of some typical choices we might make for these four things. 
 
-The most common distance metric and the one that scikit-learn uses by default is the euclidean no straight line distance. 
+The most common distance metric and the one that scikit-learn uses by \textbf{default} is the \texttt{Euclidean no straight line} distance. 
 
-So, technically if you are interested, the euclidean metric is actually a special case of a more general metric called the Minkowski metric, where there is a parameter p that's set to two that will give you the euclidean metric. And you'll see this in the notebook, when you look at the actual settings, there done in terms of the Minkowski metric. 
+So, technically if you are interested, the Euclidean metric is actually a special case of a more general metric called the \texttt{Minkowski} metric, where there is a parameter \texttt{p~=~2} that will give you the Euclidean metric. 
 
 We might choose to use the five nearest neighbors, let's say, for our choice of k. 
 
-And, we might specify that there's no special treatment for neighbors that are closer, so we have a uniform waiting. 
+And, we might specify that there's no special treatment for neighbors that are closer, so we have a \texttt{uniform} weighting. 
 
-Also by default scikit-learn will apply for the fourth criterion a simple majority vote, and it will predict the class with the most representatives among the nearest neighbors. 
+Also by \textbf{default} scikit-learn will apply for the fourth criterion a \emph{simple majority vote}, and it will predict the class with the most representatives among the nearest neighbors. 
 
-We'll look at a number of alternative classifiers in next week's class on supervised learning methods. 
 
-For now, let's take a look at the notebook to see how we apply a k a nearest neighbor classifier in Python to our example fruit data set. 
+For now, let's take a look at the notebook to see how we apply a k nearest neighbor classifier in Python to our example fruit data set. 
 
-As a reminder you can use Shit+tab to show the documentation pop up for the method as you're entering it to help remind you of the different parameter option and syntax. 
+{\scriptsize
+\begin{verbatim}
+from sklearn.neighbors import KNeighborsClassifier
 
-So, recall that our task was to correctly classify new, incoming objects. In our example case, pieces of fruit. So, our newly trained classifier will take a data instance as input, and give us a predicted label as output. 
+knn = KNeighborsClassifier(n_neighbors = 5)
+knn.fit(X_train, y_train)
+KNeighborsClassifier(algorithm='auto', leaf_size=30, 
+   metric='minkowski', metric_params=None, n_jobs=1, 
+   n_neighbors=5, p=2, weights='uniform')
 
-The first step in Python that we need to take is to load the necessary modules. As well as load the data set into a panda's data frame. 
+knn.score(X_test, y_test)
+0.53333333333333333           
+\end{verbatim}
+}
 
-After we've done that, we can dump out the first few rows using the head method to check the column names, and get some examples of the first few instances. 
+Our task was to correctly classify new, incoming objects. In our example case, pieces of fruit. So, our newly trained classifier will take a data instance as input, and give us a predicted label as output. 
 
 Now, what I'm doing next here in the notebook is defining a dictionary that takes a numeric fruit label as the input key. And returns a value that's a string with the name of the fruit, and this dictionary just makes it easier to convert the output of a classifier prediction to something a person can more easily interpret, the name of a fruit in this case. 
 
-So, for this example we'll define a variable capital X that holds the features of our data set without the label. 
+So, for this example we'll define a variable \texttt{X} that holds the features of our data set without the label. And here I 'm going to use the mass, width and height of the fruit as features. So, this collection of features is called the \emph{feature space}. 
 
-And here I 'm going to use the mass, width and height of the fruit as features. 
+We define a second variable \texttt{y} to hold the corresponding labels for the instances in \texttt{X}. 
 
-So, this collection of features is called the feature space. 
-
-We define a second variable, lower case y, to hold the corresponding labels for the instances in x. 
-
-Now, we can parse x and y to the train test split function in circuit LAN. 
-
-Normally these splitting into training and test sets is done randomly, but for this lecture I want to make sure we all get the same results. So, I set the random state parameter to a specific f=value, in this case I happen to choose zero. 
+Now, we can parse \texttt{X} and \texttt{y} to the \texttt{train_test_split} function. Normally these splitting into training and test sets is done randomly, but for this lecture I want to make sure we all get the same results. So, I set the \texttt{random_state} parameter to a specific value, in this case I happen to choose~\texttt{0}. 
 
 The results of the train test split function are put into the four variables you see on the left. And these are marked as x_train, x_test, y_train, and y_test. We're going to be using this x and y variable naming convention throughout the course to refer to data and labels. 
 
